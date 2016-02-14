@@ -3,13 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+    <title>Beerfest Australia</title>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+<script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
+    <!-- Cordova is bootstrapped by ionic-platform-web-client, uncomment this if you remove ionic-platform-web-client... -->
+<!-- <script src="cordova.js"></script> -->
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -20,14 +22,58 @@
     <script src="js/routes.js"></script>
     <script src="js/services.js"></script>
     <script src="js/directives.js"></script>
-
+    <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
   </head>
   <body ng-app="app" animation="slide-left-right-ios7">
+
+<script>
+    var ref = new Firebase("https://beerfestaustralia.firebaseio.com");
+  ref.authWithOAuthPopup("facebook", function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });
+  </script>
+
+  <script>
+  // we would probably save a profile when we register new users on our site
+// we could also read the profile to see if it's null
+// here we will just simulate this with an isNewUser boolean
+var isNewUser = true;
+
+var ref = new Firebase("https://beerfestaustralia.firebaseio.com");
+ref.onAuth(function(authData) {
+  if (authData && isNewUser) {
+    // save the user's profile into the database so we can list users,
+    // use them in Security and Firebase Rules, and show profiles
+    ref.child("users").child(authData.uid).set({
+      provider: authData.provider,
+      name: getName(authData)
+    });
+  }
+});
+
+// find a suitable name based on the meta info given by each provider
+function getName(authData) {
+  switch(authData.provider) {
+     case 'password':
+       return authData.password.email.replace(/@.*/, '');
+     case 'twitter':
+       return authData.twitter.displayName;
+     case 'facebook':
+       return authData.facebook.displayName;
+  }
+}
+  </script>
+
   <div>
     <div>
         <ion-nav-bar class="bar-stable">
             <ion-nav-back-button class="button-icon icon ion-ios-arrow-back">Back</ion-nav-back-button>
         </ion-nav-bar>
+        <p>0426</p>
         <ion-nav-view></ion-nav-view>
     </div>
 </div>
