@@ -5,10 +5,12 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic','ionic.service.core', 'app.controllers', 'app.routes', 'app.services', 'app.directives', 'ionic.service.analytics'])
+var app = angular.module('app', ['ionic', 'ionic.service.core', 'app.controllers', 'app.routes', 'app.services', 'app.directives', 'ionic.service.analytics', 'ngCordova'])
+
 
 .run(function($ionicPlatform, $ionicAnalytics) {
   $ionicPlatform.ready(function() {
+
 
     // Push Ionic
     var push = new Ionic.Push({
@@ -22,6 +24,7 @@ angular.module('app', ['ionic','ionic.service.core', 'app.controllers', 'app.rou
     // Analytics ionic
     $ionicAnalytics.register();
 
+
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -29,6 +32,7 @@ angular.module('app', ['ionic','ionic.service.core', 'app.controllers', 'app.rou
     }
     if(window.StatusBar) {
       // org.apache.cordova.statusbar required
+
       StatusBar.styleDefault();
     }
   });
