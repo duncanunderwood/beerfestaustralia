@@ -109,7 +109,13 @@ angular.module('app.controllers', ['ionic'])
 
 })
 
+.controller('fremantle_stallsCtrl', function($scope) {
 
+})
+
+.controller('fremantle_sitemapCtrl', function($scope) {
+
+})
 
 
 

@@ -286,6 +286,18 @@ angular.module('app.routes', [])
       controller: 'fremantle_eventinfoCtrl'
     })
 
+    .state('fremantle_stalls', {
+      url: '/fremantle_stalls',
+      templateUrl: 'templates/fremantle_stalls.html',
+      controller: 'fremantle_stallsCtrl'
+    })
+
+    .state('fremantle_sitemap', {
+      url: '/fremantle_sitemap',
+      templateUrl: 'templates/fremantle_sitemap.html',
+      controller: 'fremantle_sitemapCtrl'
+    })
+
 
     .state('menu.socialMedia', {
       url: '/socialmedia',
