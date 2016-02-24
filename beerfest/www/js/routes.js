@@ -280,6 +280,11 @@ angular.module('app.routes', [])
 
 
 
+    .state('fremantle_eventinfo', {
+      url: '/fremantle_eventinfo',
+      templateUrl: 'templates/fremantle_eventinfo.html',
+      controller: 'fremantle_eventinfoCtrl'
+    })
 
 
     .state('menu.socialMedia', {

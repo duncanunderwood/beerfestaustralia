@@ -105,6 +105,14 @@ angular.module('app.controllers', ['ionic'])
 
 })
 
+.controller('fremantle_eventinfoCtrl', function($scope) {
+
+})
+
+
+
+
+
 
 .controller('notesCtrl', function($scope) {
 
