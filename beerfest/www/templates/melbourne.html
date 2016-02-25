@@ -1,4 +1,5 @@
 <ion-view title="Melbourne">
+
     <ion-content overflow-scroll="true" padding="true" style="background: url() no-repeat center;" class="has-header">
         <form class="list"></form>
         <ion-list></ion-list>
@@ -7,31 +8,19 @@
         </div>
         <h3>Melbourne Beerfest</h3>
         <div>
-            <h4>Sat 5th March, March 2016.</h4>
+            <h4>Sat 5th March 2016</h4>
         </div>
-        <h5>Catani Gardens</h5>
+        <h5>Cantani Gardens</h5>
         <div>
-            <p>St Kilda, Vic 3182</p>
+            <p>St. Kilda, Vic 3182</p>
         </div>
 
-        <div class="row">
-          <div class="col">
-            <button class="button button-block button-positive">
-              <i class="icon ion-help"></i> Event Info</button>
-
-            <button class="button button-block button-positive">
-              <i class="icon ion-map"></i> Site Map</button>
-
-            <button class="button button-block button-positive">
-              <i class="icon ion-email"></i> Contact</button>
-          </div>
-          <div class="col">
-            <button class="button button-block button-positive">
-              <i class="icon ion-beer"></i> Stalls</button>
-            <button class="button button-block button-positive">
-              <i class="icon ion-document"></i> Tickets</button>
-          </div>
-        </div>
+        <ion-list>
+            <ion-item href="#/melbourne_eventinfo" menu-close=""><i class="icon ion-map"></i> Event Info</ion-item>
+            <ion-item href="#/melbourne_stalls" menu-close=""><i class="icon ion-beer"></i> Stalls</ion-item>
+            <ion-item href="#/melbourne_sitemap" menu-close=""><i class="icon ion-map"></i> Site Map</ion-item>
+            <!-- <ion-item href="#/side-menu21/tickets" menu-close=""><i class="icon ion-document"></i> Tickets</ion-item> -->
+        </ion-list>
 
     </ion-content>
 </ion-view>

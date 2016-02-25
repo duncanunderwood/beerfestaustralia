@@ -5,8 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-var app = angular.module('app', ['ionic', 'ionic.service.core', 'app.controllers', 'app.routes', 'app.services', 'app.directives', 'ionic.service.analytics', 'ngCordova'])
-
+var app = angular.module('app', ['ionic','ionic.service.core', 'app.controllers', 'app.routes', 'app.services', 'app.directives', 'ionic.service.analytics', 'ngCordova'])
 
 .run(function($ionicPlatform, $ionicAnalytics) {
   $ionicPlatform.ready(function() {
@@ -35,4 +34,23 @@ var app = angular.module('app', ['ionic', 'ionic.service.core', 'app.controllers
       StatusBar.styleDefault();
     }
   });
-})
+});
+
+
+app.service('Todo', function() {
+
+    var todos = [
+        {'title': 'Test1', 'done': 'false'},
+        {'title': 'Test2', 'done': 'false'},
+        {'title': 'Test3', 'done': 'true'},
+        {'title': 'Test4', 'done': 'true'}];
+
+    this.list = function() {
+        return todos;
+    }
+
+    this.add = function(todo) {
+        todos.splice(0, 0, todo);
+    }
+
+});

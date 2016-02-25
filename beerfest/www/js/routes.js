@@ -298,6 +298,83 @@ angular.module('app.routes', [])
       controller: 'fremantle_sitemapCtrl'
     })
 
+    .state('esk_eventinfo', {
+      url: '/esk_eventinfo',
+      templateUrl: 'templates/esk_eventinfo.html',
+      controller: 'esk_eventinfoCtrl'
+    })
+
+    .state('esk_stalls', {
+      url: '/esk_stalls',
+      templateUrl: 'templates/esk_stalls.html',
+      controller: 'esk_stallsCtrl'
+    })
+
+    .state('esk_sitemap', {
+      url: '/esk_sitemap',
+      templateUrl: 'templates/esk_sitemap.html',
+      controller: 'esk_sitemapCtrl'
+    })
+
+    .state('melbourne_eventinfo', {
+      url: '/melbourne_eventinfo',
+      templateUrl: 'templates/melbourne_eventinfo.html',
+      controller: 'melbourne_eventinfoCtrl'
+    })
+
+    .state('melbourne_stalls', {
+      url: '/melbourne_stalls',
+      templateUrl: 'templates/melbourne_stalls.html',
+      controller: 'melbourne_stallsCtrl'
+    })
+
+    .state('melourne_sitemap', {
+      url: '/melbourne_sitemap',
+      templateUrl: 'templates/melbourne_sitemap.html',
+      controller: 'melbourne_sitemapCtrl'
+    })
+
+
+    .state('esk_stall1', {
+      url: '/esk_stall1',
+      templateUrl: 'templates/esk_stall1.html',
+      controller: 'esk_stall1Ctrl'
+    })
+
+    .state('esk_stall2', {
+      url: '/esk_stall2',
+      templateUrl: 'templates/esk_stall2.html',
+      controller: 'esk_stall2Ctrl'
+    })
+
+    .state('esk_stall3', {
+      url: '/esk_stall3',
+      templateUrl: 'templates/esk_stall3.html',
+      controller: 'esk_stall3Ctrl'
+    })
+
+    .state('esk_stall4', {
+      url: '/esk_stall4',
+      templateUrl: 'templates/esk_stall4.html',
+      controller: 'esk_stall4Ctrl'
+    })
+
+    .state('esk_entertainment', {
+      url: '/esk_entertainment',
+      templateUrl: 'templates/esk_entertainment.html',
+      controller: 'esk_entertainmentCtrl'
+    })
+
+
+
+
+
+
+
+
+
+
+
 
     .state('menu.socialMedia', {
       url: '/socialmedia',
