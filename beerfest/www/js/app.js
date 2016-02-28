@@ -7,18 +7,61 @@
 // 'starter.controllers' is found in controllers.js
 var app = angular.module('app', ['ionic','ionic.service.core', 'app.controllers', 'app.routes', 'app.services', 'app.directives', 'ionic.service.analytics', 'ngCordova'])
 
+
 .run(function($ionicPlatform, $ionicAnalytics) {
   $ionicPlatform.ready(function() {
 
+    document.addEventListener("deviceready", onDeviceReady, false);
+    function onDeviceReady() {
+        window.open = cordova.InAppBrowser.open;
+    }
+
+    // kick off the platform web client
+    Ionic.io();
+
+    // this will give you a fresh user or the previously saved 'current user'
+    var user = Ionic.User.current();
+
+    // if the user doesn't have an id, you'll need to give it one.
+    if (!user.id) {
+      user.id = Ionic.User.anonymousId();
+      // user.id = 'your-custom-user-id';
+    }
+
+    //persist the user
+    user.save();
+
+    // otherwise you can handle the success and failure using the promise returned by save()
+
+var success = function(response) {
+  console.log('user was saved');
+};
+
+var failure = function(error) {
+  console.log('user was NOT saved');
+};
+
+user.save().then(success, failure);
 
     // Push Ionic
     var push = new Ionic.Push({
-      "debug": true
+
+      "onNotification": function(notification) {
+          alert('Teste push received!');
+          console.log(notification);
+        },
+        "pluginConfig": {
+          "android": {
+            "iconColor": "#FFC900"
+          }
+        }
     });
 
     push.register(function(token) {
       console.log("Device token:",token.token);
     });
+
+
 
     // Analytics ionic
     $ionicAnalytics.register();
