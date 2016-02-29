@@ -1,18 +1,18 @@
 <ion-side-menus enable-menu-with-back-views="false">
-    <ion-side-menu-content>
+    <ion-side-menu-content edge-drag-threshold="true" drag-content="true">
         <ion-nav-bar class="bar-energized">
-            <ion-nav-back-button></ion-nav-back-button>
+            <!-- <ion-nav-back-button></ion-nav-back-button> -->
             <ion-nav-buttons side="left">
-                <button class="button button-icon button-clear ion-navicon" menu-toggle=""></button>
+                <button menu-toggle="left" class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
             </ion-nav-buttons>
         </ion-nav-bar>
         <ion-nav-view name="side-menu21"></ion-nav-view>
     </ion-side-menu-content>
-    <ion-side-menu side="left">
+    <ion-side-menu side="left" expose-aside-when="large">
         <ion-header-bar class="bar-calm">
             <div class="title">Menu</div>
         </ion-header-bar>
-        <ion-content padding="false" class="side-menu-left has-header" <="" ion-content="">
+        <ion-content padding="false" class="side-menu-left has-header">
             <ion-list>
                 <ion-item href="#/side-menu21/home" menu-close="">Home</ion-item>
                 <ion-item href="#/side-menu21/fremantle" menu-close="">Fremantle</ion-item>

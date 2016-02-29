@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.duncanunderwood.beerfestaustralia" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.duncanunderwood.beerfestaustralia" version="1.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Beerfest</name>
   <description>
         Beerfest Australia
@@ -9,11 +9,11 @@
     </author>
   <content src="index.html"/>
   <access origin="*"/>
-  <allow-intent href="http://*/*" />
-  <allow-intent href="https://*/*" />
-  <allow-intent href="tel:*" />
-  <allow-intent href="sms:*" />
-  <allow-intent href="mailto:*" />
+  <!-- <allow-intent href="http://*/*" /> -->
+  <!-- <allow-intent href="https://*/*" /> -->
+  <!-- <allow-intent href="tel:*" /> -->
+  <!-- <allow-intent href="sms:*" /> -->
+  <!-- <allow-intent href="mailto:*" /> -->
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>

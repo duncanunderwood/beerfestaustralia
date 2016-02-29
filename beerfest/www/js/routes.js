@@ -225,49 +225,6 @@ angular.module('app.routes', [])
     })
 
 
-
-
-
-    .state('vendor1', {
-      url: '/vendor1',
-      templateUrl: 'templates/vendor1.html',
-      controller: 'vendor1Ctrl'
-    })
-
-
-
-
-
-    .state('vendor2', {
-      url: '/vendor2',
-      templateUrl: 'templates/vendor2.html',
-      controller: 'vendor2Ctrl'
-    })
-
-
-
-
-
-    .state('vendor3', {
-      url: '/vendor3',
-      templateUrl: 'templates/vendor3.html',
-      controller: 'vendor3Ctrl'
-    })
-
-
-
-
-
-    .state('vendor4', {
-      url: '/vendor4',
-      templateUrl: 'templates/vendor4.html',
-      controller: 'vendor4Ctrl'
-    })
-
-
-
-
-
     .state('menu.photos', {
       url: '/photos',
       views: {

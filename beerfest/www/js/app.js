@@ -62,7 +62,6 @@ user.save().then(success, failure);
     });
 
 
-
     // Analytics ionic
     $ionicAnalytics.register();
 
